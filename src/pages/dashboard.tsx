@@ -24,7 +24,8 @@ const options = {
     enabled: false,
   },
   tooltip: {
-    enabled: false,
+    fillSeriesColor: false,
+    theme: "dark",
   },
   xaxis: {
     type: 'datetime', 
@@ -59,12 +60,16 @@ const series = [
   { name: 'series1', data: [60, 135, 100, 38, 61, 18, 100] }
 ]
 
+const opens = [
+  { name: 'opens', data: [20, 19, 32, 36, 54, 70, 106] }
+]
+
 export default function Dashboard() {
   return (
     <Flex direction="column" h="100vh">
       <Header />
 
-      <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
+      <Flex w="100%" my="6" maxWidth={1490} mx="auto" px="6">
         <Sidebar />
 
         <SimpleGrid flex="1" gap="4" minChildWidth="320px"  alignContent={"flex-start"}>
@@ -75,7 +80,7 @@ export default function Dashboard() {
             pb="4"
           >
             <Text fontSize="lg" mb="4">Incritos da semana</Text>
-            <Chart options={options} series={series} type="area" height={160} />
+            <Chart options={options} series={series} type="area" height={260} />
           </Box>
           <Box
             p={["6", "8"]}
@@ -84,7 +89,7 @@ export default function Dashboard() {
             pb="4"
           >
             <Text fontSize="lg" mb="4">Taxa de abertura</Text>
-            <Chart options={options} series={series} type="area" height={160} />
+            <Chart options={options} series={opens} type="area" height={260} />
           </Box>
         </SimpleGrid>
       </Flex>

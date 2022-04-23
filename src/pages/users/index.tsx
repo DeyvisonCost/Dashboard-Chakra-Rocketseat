@@ -116,7 +116,7 @@ console.log(data);
             </Tbody>
           </Table>
           <Pagination 
-            totalCountOfRegisters={/*data.totalCount*/ 5} 
+            totalCountOfRegisters={/*data.totalCount*/ 100} 
             currentPage={page}
             onPageChange={setPage} />
                   </>
